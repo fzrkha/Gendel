@@ -7,7 +7,7 @@
     <title>Home</title>
 </head>
 <body>
-    <h1 algin="center">Home Page</h1>
+    <h1 align="center">Home Page</h1>
     <h3>yyy</h3>
 </body>
 </html>
