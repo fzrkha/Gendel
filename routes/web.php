@@ -22,7 +22,8 @@ Route::get('/login', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', ['name' => 'Fansoli',
+                         'email' => 'fimtafa02@gmail.com']);
 });
 
 Route::get('/blog', function () {
