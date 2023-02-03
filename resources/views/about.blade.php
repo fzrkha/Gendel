@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css')}}/style.css">
-    <title>Home</title>
+    <title>About</title>
 </head>
 <body>
-    <h1 align="center">About</h1>
-    <h3>i</h3>
+    <font color="white">
+    <h1 align="center">Halaman About</h1>
+    <h3>Fansoli Ibnu Mustafa</h3>
+    <p>fimtafa02@gmail.com</p>
+    <img src="{{ asset('img') }}/Scaramouche.png" alt="Haru" width="200">
+
+    </font>
 
 </body>
 </html>

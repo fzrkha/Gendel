@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css')}}/style.css">
-    <title>Home</title>
+    <title>Blog</title>
 </head>
 <body>
+    <font color="white">
     <h1 align="center">Blog</h1>
     <h3>ngatuk</h3>
-
+    </font>
 </body>
 </html>

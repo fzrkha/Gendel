@@ -8,9 +8,10 @@
     <title>Home</title>
 </head>
 <body>
+    <font color="white">
     <h1 align="center">Home Page</h1>
     <h3>yyy</h3>
-
+    </font>
     <script src="{{ asset('js') }}/script.js"></script>
 </body>
 </html>
