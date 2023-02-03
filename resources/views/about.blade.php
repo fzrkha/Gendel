@@ -10,8 +10,8 @@
 <body>
     <font color="white">
     <h1 align="center">Halaman About</h1>
-    <h3>Fansoli Ibnu Mustafa</h3>
-    <p>fimtafa02@gmail.com</p>
+    <h3>{{ $name }}</h3>
+    <p>{{ $email }}</p>
     <img src="{{ asset('img') }}/Scaramouche.png" alt="Haru" width="200">
 
     </font>
