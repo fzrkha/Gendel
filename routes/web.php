@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Content;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,23 +34,9 @@ Route::get('/about', function () {
 });
 
 Route::get('/contents', function () {
-    $in_post = [
-        [
-            "title" => "Episode 1",
-            "slug" => "eps-satu",
-            "author" => "Kang Halu",
-            "desc" => "Seorang Raja Iblis yang bereinkarnasi menjadi manusia biasa."
-        ],
-        [
-            "title" => "Episode 2",
-            "slug" => "eps-dua",
-            "author" => "Kang Halu",
-            "desc" => "Bagaimana kehidupan si Raja Iblis setelah bereinkarnasi menjadi manusia?"
-        ]
-        ];
     return view('post', [
         "title" => "Contents",
-        "isi" => $in_post
+        "isi" => Content::all()
     ]);
 });
 

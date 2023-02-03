@@ -10,7 +10,7 @@
   </head>
   <body>
 
-    @include('parts.navbar');
+    @include('parts.navbar')
 
 <div class="container mt-4">
     @yield('isi')
