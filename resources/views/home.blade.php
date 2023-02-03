@@ -10,5 +10,7 @@
 <body>
     <h1 align="center">Home Page</h1>
     <h3>yyy</h3>
+
+    <script src="{{ asset('js') }}/script.js"></script>
 </body>
 </html>
