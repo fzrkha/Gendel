@@ -4,7 +4,7 @@
 <article>
     <h2>{{ $eps["title"] }}</h2>
     <h5>By: {{ $eps["author"] }}</h5>
-    <p>{{ $eps["desc"] }}</p>
+    {!! $eps["desc"] !!}
 </article>
 
 <a href="/contents">Back to Contents</a>

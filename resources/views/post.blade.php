@@ -4,10 +4,10 @@
     @foreach ($isi as $masuk)
     <article class="mb-5">
         <h2>
-            <a href="/contents/{{ $masuk["slug"] }}">{{ $masuk["title"] }}</a>
+            <a href="/contents/{{ $masuk->id }}">{{ $masuk->title }}</a>
         </h2>
-        <h5>Karya: {{ $masuk["author"] }}</h5>
-        <p>{{ $masuk["desc"] }}</p>
+        <h5>Karya: {{ $masuk->content }}</h5>
+        <p>{{ $masuk->excerpt }}</p>
     </article>
     @endforeach
 @endsection

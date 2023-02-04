@@ -2,25 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class Content
+class Content extends Model
 {
-    private static $isi_konten =  [
-        [
-            "title" => "Episode 1",
-            "slug" => "eps-satu",
-            "author" => "Kang Halu",
-            "desc" => "Seorang Raja Iblis yang bereinkarnasi menjadi manusia biasa."
-        ],
-        [
-            "title" => "Episode 2",
-            "slug" => "eps-dua",
-            "author" => "Kang Halu",
-            "desc" => "Bagaimana kehidupan si Raja Iblis setelah bereinkarnasi menjadi manusia?"
-        ]
-        ];
+    use HasFactory;
 
-    public static function all() {
-        return self::$isi_konten;
-    }
+    protected $fillable = ['title', 'excerpt', 'body'];
 }
