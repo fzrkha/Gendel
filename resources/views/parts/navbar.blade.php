@@ -12,9 +12,15 @@
           <li class="nav-item">
             <a class="nav-link {{ ($title === "About") ? 'active' : '' }}" href="/about">About</a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link {{ ($title === "Contents") ? 'active' : '' }}" href="/contents">Contents</a>
-          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Posts
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item {{ ($title === "Contents") ? 'active' : '' }}" href="/contents">Contents</a>
+              <a class="dropdown-item {{ ($title === "Content Categories") ? 'active' : '' }}" href="/categories">Categories</a>
+            </ul>
+            </li>
         </ul>
   
         <form class="d-flex">

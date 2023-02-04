@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\tcront;
+use App\Models\Category;
+use App\Models\Content;
 
 
 /*
@@ -24,3 +26,19 @@ Route::get('/about', [tcront::class, 'about']);
 Route::get('/contents', [tcront::class, 'contents']);
 
 Route::get('/contents/{slug}', [tcront::class, 'content']);
+
+
+Route::get('/categories', function() {
+    return view('categories', [
+        'title' => 'Content Categories',
+        'categories' => Category::all()
+    ]);
+});
+
+Route::get('/categories/{category:slug}', function(Category $category) {
+    return view('category', [
+        'title' => $category->name,
+        'contents' => $category->contents,
+        'category' => $category->name
+    ]);
+});
