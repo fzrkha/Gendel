@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Content;
+use App\Models\Category;
 
 class tcront extends Controller
 {
@@ -78,6 +79,21 @@ class tcront extends Controller
     public function login() {
         return view('login', [
             "title" => "Login"
+        ]);
+    }
+
+    public function categories() {
+        return view('categories', [
+            'title' => 'Content Categories',
+            'categories' => Category::all()
+        ]);
+    }
+
+    public function category(Category $category) {
+        return view('category', [
+            'title' => $category->name,
+            'contents' => $category->contents,
+            'category' => $category->name
         ]);
     }
 }

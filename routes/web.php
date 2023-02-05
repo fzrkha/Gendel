@@ -27,18 +27,6 @@ Route::get('/contents', [tcront::class, 'contents']);
 
 Route::get('/contents/{slug}', [tcront::class, 'content']);
 
+Route::get('/categories', [tcront::class, 'categories']);
 
-Route::get('/categories', function() {
-    return view('categories', [
-        'title' => 'Content Categories',
-        'categories' => Category::all()
-    ]);
-});
-
-Route::get('/categories/{category:slug}', function(Category $category) {
-    return view('category', [
-        'title' => $category->name,
-        'contents' => $category->contents,
-        'category' => $category->name
-    ]);
-});
+Route::get('/categories/{category:slug}', [tcront::class, 'category']);
