@@ -76,12 +76,6 @@ class tcront extends Controller
         ]);
     }
 
-    public function login() {
-        return view('login', [
-            "title" => "Login"
-        ]);
-    }
-
     public function categories() {
         return view('categories', [
             'title' => 'Content Categories',

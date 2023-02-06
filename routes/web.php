@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\tcront;
+use App\Http\Controllers\lcront;
+use App\Http\Controllers\rcront;
 use App\Models\Category;
 use App\Models\Content;
 
@@ -19,7 +21,9 @@ use App\Models\Content;
 
 Route::get('/', [tcront::class, 'index']);
 
-Route::get('/login', [tcront::class, 'login']);
+Route::get('/login', [lcront::class, 'login']);
+
+Route::get('/register', [rcront::class, 'reg']);
 
 Route::get('/about', [tcront::class, 'about']);
 
