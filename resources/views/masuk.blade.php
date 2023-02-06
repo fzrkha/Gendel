@@ -75,27 +75,49 @@
   <body class="text-center">
     
 <main class="form-registration w-100 m-auto">
-  <form>
+  <form action="/register" method="post">
+    @csrf
     <img class="mb-4" src="{{ asset('img') }}/qingxin.png" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Registrasi dulu masbro</h1>
 
     <div class="form-floating">
-      <input type="text" name="name" class="form-control" id="name" placeholder="Masukkan Nama">
+      <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Masukkan Nama" required value="{{ old('name') }}">
       <label for="name">Nama</label>
+      @error('name')
+      <div class="invalid-feedback" align="left">
+        {{ $message }}
+      </div>
+      @enderror
     </div>
+
     <div class="form-floating">
-        <input type="text" name="username" class="form-control" id="username" placeholder="username">
+        <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="username" required value="{{ old('username') }}">
         <label for="username">Username</label>
+        @error('username')
+      <div class="invalid-feedback" align="left">
+        {{ $message }}
+      </div>
+      @enderror
       </div>
   
     <div class="form-floating">
-        <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
+        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" required value="{{ old('email') }}">
         <label for="email">Alamat Email</label>
+        @error('email')
+      <div class="invalid-feedback" align="left">
+        {{ $message }}
+      </div>
+      @enderror
       </div>
   
     <div class="form-floating">
-      <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+      <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Password" required>
       <label for="password">Password</label>
+      @error('password')
+      <div class="invalid-feedback" align="left">
+        {{ $message }}
+      </div>
+      @enderror
     </div>
 
     <button class="w-100 btn btn-lg btn-primary" type="submit">Daftar</button>

@@ -24,6 +24,7 @@ Route::get('/', [tcront::class, 'index']);
 Route::get('/login', [lcront::class, 'login']);
 
 Route::get('/register', [rcront::class, 'reg']);
+Route::post('/register', [rcront::class, 'sv']);
 
 Route::get('/about', [tcront::class, 'about']);
 
