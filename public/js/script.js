@@ -1,1 +1,1 @@
-alert('Hello Gendel!');
+alert('Registrasi berhasil! Silahkan login');

@@ -93,5 +93,11 @@
     <p class="mt-5 mb-3 text-muted">&copy; Korakora</p>
   </form>
 </main>
+
+@if(session()->has('success'))
+  <script src="{{ asset('js') }}/script.js"></script>
+@endif
+
+
   </body>
 </html>
