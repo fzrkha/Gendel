@@ -81,8 +81,13 @@
     <h1 class="h3 mb-3 fw-normal">Login dulu woy</h1>
 
     <div class="form-floating">
-      <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com" autofocus required>
+      <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" autofocus required value="{{ old('email') }}">
       <label for="email">Alamat Email</label>
+      @error('email')
+      <div class="invalid-feedback">
+        {{ $message }}
+      </div>
+      @enderror
     </div>
     <div class="form-floating">
       <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
@@ -97,6 +102,10 @@
 
 @if(session()->has('success'))
   <script src="{{ asset('js') }}/script.js"></script>
+@endif
+
+@if(session()->has('loginError'))
+  <script src="{{ asset('js') }}/scriptE.js"></script>
 @endif
 
 

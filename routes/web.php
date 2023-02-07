@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dcront;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\tcront;
 use App\Http\Controllers\lcront;
@@ -36,3 +37,5 @@ Route::get('/contents/{slug}', [tcront::class, 'content']);
 Route::get('/categories', [tcront::class, 'categories']);
 
 Route::get('/categories/{category:slug}', [tcront::class, 'category']);
+
+Route::get('/dashboard', [dcront::class, 'index']);

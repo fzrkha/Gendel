@@ -14,11 +14,17 @@ class lcront extends Controller
     }
 
     public function auth(Request $request) {
-        $request->validate([
+        $acc = $request->validate([
             'email' => ['required', 'email:dns'],
             'password' => 'required'
         ]);
 
-        dd('Y gede');
+        if(Auth::attempt($acc)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/dashboard');
+        }
+
+        return back()->with('loginError', '');
     }
 }
