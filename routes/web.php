@@ -22,10 +22,11 @@ use App\Models\Content;
 
 Route::get('/', [tcront::class, 'index']);
 
-Route::get('/login', [lcront::class, 'login']);
+Route::get('/login', [lcront::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [lcront::class, 'auth']);
+Route::post('/logout', [lcront::class, 'logout']);
 
-Route::get('/register', [rcront::class, 'reg']);
+Route::get('/register', [rcront::class, 'reg'])->middleware('guest');
 Route::post('/register', [rcront::class, 'sv']);
 
 Route::get('/about', [tcront::class, 'about']);
@@ -38,4 +39,4 @@ Route::get('/categories', [tcront::class, 'categories']);
 
 Route::get('/categories/{category:slug}', [tcront::class, 'category']);
 
-Route::get('/dashboard', [dcront::class, 'index']);
+Route::get('/dashboard', [dcront::class, 'index'])->middleware('auth');

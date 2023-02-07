@@ -27,4 +27,11 @@ class lcront extends Controller
 
         return back()->with('loginError', '');
     }
+
+    public function logout(Request $request) {
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
 }
