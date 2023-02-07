@@ -22,6 +22,7 @@ use App\Models\Content;
 Route::get('/', [tcront::class, 'index']);
 
 Route::get('/login', [lcront::class, 'login']);
+Route::post('/login', [lcront::class, 'auth']);
 
 Route::get('/register', [rcront::class, 'reg']);
 Route::post('/register', [rcront::class, 'sv']);

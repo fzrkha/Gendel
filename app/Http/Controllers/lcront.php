@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class lcront extends Controller
 {
@@ -12,4 +13,12 @@ class lcront extends Controller
         ]);
     }
 
+    public function auth(Request $request) {
+        $request->validate([
+            'email' => ['required', 'email:dns'],
+            'password' => 'required'
+        ]);
+
+        dd('Y gede');
+    }
 }
